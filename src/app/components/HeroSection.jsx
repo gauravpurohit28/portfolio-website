@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
+
 import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
@@ -16,9 +17,8 @@ const HeroSection = () => {
             <br></br>
                 <TypeAnimation
                     sequence={[
-                // Same substring at the start will only be typed out once, initially
                     'Gaurav',
-                    1000, // wait 1s before replacing "Mice" with "Hamsters"
+                    1000, 
                     'Web Developer',
                     1000,
                     'UI/UX Designer',

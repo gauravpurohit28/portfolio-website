@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/navbar";
+import MenuOverlay from "./components/MenuOverlay";
 import { Container } from "postcss";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar/>
       <div className="container mx-auto px-12 py-4">
         <HeroSection/>
+        <MenuOverlay/>
       </div>
     </main>
   );

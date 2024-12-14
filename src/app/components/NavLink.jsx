@@ -4,7 +4,8 @@ const NavLink = ({ href, title }) => {
   return (
     <Link
       href={href}
-      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
+      className="block py-2 px-4 text-[#ADB7BE] sm:text-xl rounded transition duration-200 hover:text-white hover:bg-[#33353F] md:p-0"
+      aria-label={title}
     >
       {title}
     </Link>

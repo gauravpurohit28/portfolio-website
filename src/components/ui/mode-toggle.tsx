@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "./button";
@@ -12,7 +12,16 @@ import {
 } from "./dropdown-menu";
 
 const ModeToggle = () => {
-  const { theme, setTheme } = useTheme(); // Ensure `theme` is used correctly
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    const root = document.documentElement; // Select the root `html` element
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [theme]);
 
   return (
     <DropdownMenu>
@@ -20,7 +29,7 @@ const ModeToggle = () => {
         <Button variant="outline" size="icon">
           <Sun
             className={`h-[1.2rem] w-[1.2rem] transition-all ${
-              theme === "dark" ? "rotate-90 scale-0" : "rotate-0 scale-100"
+              theme === "light" ? "rotate-90 scale-0" : "rotate-0 scale-100"
             }`}
           />
           <Moon

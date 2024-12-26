@@ -44,7 +44,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right Section */}
-        <div className="col-span-5 place-self-center mt-4 lg:m-20">
+        <div className="col-span-5 place-self-center mt-4 lg:m-35">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[330px] lg:h-[330px] relative overflow-hidden flex items-center justify-center">
             <Image
               src="/images/gaurav.jpg"

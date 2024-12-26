@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import {FileTextIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import {HomeIcon, MailIcon,} from "lucide-react";
 
 import { cn } from "../../components/lib/utils";
 import { buttonVariants } from "../../components/ui/button";
@@ -22,7 +22,6 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
-  resume: (props: IconProps) => <FileTextIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -55,7 +54,6 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: FileTextIcon, label: "Resume" },
   ],
   contact: {
     social: {

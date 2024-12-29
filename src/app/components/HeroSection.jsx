@@ -45,7 +45,7 @@ const HeroSection = () => {
             }}
           >
             <span className="block hover:bg-slate-800 rounded-full px-6 py-2 font-semibold">
-              Open CV
+              Resume
             </span>
           </button>
 

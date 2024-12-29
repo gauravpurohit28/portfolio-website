@@ -37,17 +37,17 @@ const HeroSection = () => {
           <button
             className="px-4 py-2 w-full sm:w-auto rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3"
             onClick={() => {
-              // Open the document in a new tab
-              const link = document.createElement('a');
-              link.href = '/GauravPurohit-CV.docx';
-              link.target = '_blank'; // Open in a new tab
-              link.click();
+              // Open the PDF in a new tab
+              window.open('/GauravPurohit-CV.pdf', '_blank');
             }}
           >
             <span className="block hover:bg-slate-800 rounded-full px-6 py-2 font-semibold">
               Resume
             </span>
           </button>
+
+
+
 
           </div>
         </div>

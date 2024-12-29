@@ -7,59 +7,59 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Breast Cancer Diagnosis",
+    description: "●	Developed a machine learning model to predict the likelihood of breast cancer  based on patient data.",
+    image: "/images/breast.png",
+    tag: ["All"],
+    gitUrl: "https://colab.research.google.com/drive/1EsRZVwOCfcevIeMiNvXRVkDrjYPjWyKq#scrollTo=Y2YDRxObfUFO",
+    previewUrl: "https://gauravbreastcp.glitch.me",
   },
   {
     id: 2,
     title: "Lumen",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    description: "Implemented a memory-driven AI assistant with Gemini 1.5 Pro, utilizing NLP and speech recognition to answer queries.",
+    image: "/images/lumen.jpg",
+    tag: ["All"],
+    gitUrl: "https://github.com/gauravpurohit28/Lumen-latest",
+    previewUrl: "https://lumen-frontend.vercel.app",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Pulmones",
+    description: "An AI driven lung disease prediction website which we made during our hackathon.",
+    image: "/images/image.png",
+    tag: ["All"],
+    gitUrl: "https://github.com/gauravpurohit28/Pulmones",
+    previewUrl: "https://pulmones-client.vercel.app",
   },
-  {
-    id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-];
+//   {
+//     id: 4,
+//     title: "Food Ordering Application",
+//     description: "Project 4 description",
+//     image: "/images/projects/4.png",
+//     tag: ["All", "Mobile"],
+//     gitUrl: "/",
+//     previewUrl: "/",
+//   },
+//   {
+//     id: 5,
+//     title: "React Firebase Template",
+//     description: "Authentication and CRUD operations",
+//     image: "/images/projects/5.png",
+//     tag: ["All", "Web"],
+//     gitUrl: "/",
+//     previewUrl: "/",
+//   },
+//   {
+//     id: 6,
+//     title: "Full-stack Roadmap",
+//     description: "Project 5 description",
+//     image: "/images/projects/6.png",
+//     tag: ["All", "Web"],
+//     gitUrl: "/",
+//     previewUrl: "/",
+//   },
+ ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
@@ -89,16 +89,6 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="All"
           isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">

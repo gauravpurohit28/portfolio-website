@@ -74,7 +74,7 @@ const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "https://www.grajpurohittt@gmail.com",
+        url: "mailto:grajpurohittt@gmail.com",
         icon: Icons.email,
       },
     },
@@ -90,7 +90,7 @@ export function DockDemo() {
         <TooltipProvider>
           <Dock
             direction="middle"
-            className="bg-white shadow-lg rounded-2xl  p-2" // Updated styles for white background
+            className="bg-white shadow-lg rounded-2xl p-2"
           >
             {DATA.navbar.map((item) => (
               <DockIcon key={item.label}>
@@ -135,17 +135,6 @@ export function DockDemo() {
                 </Tooltip>
               </DockIcon>
             ))}
-            <Separator orientation="vertical" className="h-full py-2" />
-            <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <ModeToggle />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Theme</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
           </Dock>
         </TooltipProvider>
       </div>

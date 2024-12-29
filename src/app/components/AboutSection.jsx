@@ -8,12 +8,12 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
         <li>React</li>
+        <li>Express</li>
+        <li>JavaScript</li>
+        <li>Node.js</li>
+        <li>Python</li>
+        <li>Firebase</li>
       </ul>
     ),
   },
@@ -22,8 +22,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Rajasthan Technical University</li>
+        <li>National Institute of Electronics and Information Technology (NIELIT)</li>
       </ul>
     ),
   },
@@ -32,8 +32,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Indian National Academy of Engineering (INAE) IITJ Hackathon.</li>
+        <li>NIELIT Certificate for AI and ML training.</li>
+        <li>JP Morgan Chase - Software Engineering Job Simulation.</li>
       </ul>
     ),
   },
@@ -51,17 +52,13 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <img align="right" alt="GIF" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWNvNHk0cmVvdDV2OTJpdHI1MWE4M3FkaG0zaDFybzYxZ3d0cXF3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f3KwliaH4MLtli8z7D/giphy.gif" width="360px"/>
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-9 px-8  xl:gap-16 sm:py-16 xl:px-16">
+      <img align="right" alt="GIF" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWNvNHk0cmVvdDV2OTJpdHI1MWE4M3FkaG0zaDFybzYxZ3d0cXF3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f3KwliaH4MLtli8z7D/giphy.gif" width="400px"/>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+              I am a full-stack web developer with expertise in JavaScript, React, Redux, Node.js, Express, HTML, CSS, and Git. I am also skilled in Python and building machine learning models. With a strong passion for technology, I love exploring innovative solutions and pushing boundaries in web and AI-driven applications.
+              I thrive on creating interactive and user-focused experiences, combining technical expertise with creativity to deliver impactful projects. Constantly learning and evolving, I enjoy staying up-to-date with emerging trends and collaborating with like-minded individuals to build the future of technology.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

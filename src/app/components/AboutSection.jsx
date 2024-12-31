@@ -70,12 +70,7 @@ const AboutSection = () => {
             Redux, Node.js, Express, HTML, CSS, and Git. I am also skilled in
             Python and building machine learning models. With a strong passion
             for technology, I love exploring innovative solutions and pushing
-            boundaries in web and AI-driven applications. I thrive on creating
-            interactive and user-focused experiences, combining technical
-            expertise with creativity to deliver impactful projects.
-            Constantly learning and evolving, I enjoy staying up-to-date with
-            emerging trends and collaborating with like-minded individuals to
-            build the future of technology.
+            boundaries in web and AI-driven applications. 
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

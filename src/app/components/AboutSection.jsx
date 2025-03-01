@@ -33,9 +33,10 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Indian National Academy of Engineering (INAE) IITJ Hackathon.</li>
-        <li>NIELIT Certificate for AI and ML training.</li>
-        <li>JP Morgan Chase - Software Engineering Job Simulation.</li>
+        <li>Indian National Academy of Engineering (INAE) IITJ Hackathon</li>
+        <li>Salesforce AI Associate</li>
+        <li>NIELIT Certificate for AI and ML training</li>
+        <li>JP Morgan Chase - Software Engineering Job Simulation</li>
       </ul>
     ),
   },

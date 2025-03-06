@@ -3,22 +3,23 @@ import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, techStack = [] }) => {
   return (
     <motion.div
-      className="relative group bg-[#181818] rounded-xl overflow-hidden border border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
+      className="relative group bg-[#181818] rounded-xl overflow-hidden border border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 w-full"
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
-      <div
-        className="h-52 md:h-64 relative"
-        style={{
-          background: `url(${imgUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="relative h-52 md:h-64 w-full">
+        <Image
+          src={imgUrl}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black opacity-0 group-hover:opacity-100 transition-all duration-500">
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
             <div className="flex gap-3">

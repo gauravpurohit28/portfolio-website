@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative">
+    <section className="relative py-12 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div className="col-span-7 place-self-center lg:place-self-start">
+        <div className="col-span-7 place-self-center lg:place-self-start order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,14 +63,15 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-5 place-self-center"
+          className="col-span-5 place-self-center order-1 lg:order-2"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden">
+          <div className="rounded-full bg-[#181818] w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <Image
               src="/images/gaurav.jpg"
               alt="Gaurav Purohit"
-              className="object-cover rounded-full transform hover:scale-110 transition-transform duration-500"
-              fill
+              className="absolute inset-0 w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-500"
+              width={400}
+              height={400}
               priority
             />
           </div>

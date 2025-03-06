@@ -8,29 +8,32 @@ const projectsData = [
   {
     id: 1,
     title: "Breast Cancer Diagnosis",
-    description: "●	Developed a machine learning model to predict the likelihood of breast cancer  based on patient data.",
+    description: "Developed a machine learning model to predict the likelihood of breast cancer based on patient data.",
     image: "/images/breast.png",
-    tag: ["All"],
+    tag: ["All", "AI/ML"],
     gitUrl: "https://colab.research.google.com/drive/1EsRZVwOCfcevIeMiNvXRVkDrjYPjWyKq#scrollTo=Y2YDRxObfUFO",
     previewUrl: "https://gauravbreastcp.glitch.me",
+    techStack: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"]
   },
   {
     id: 2,
     title: "Lumen",
     description: "Implemented a memory-driven AI assistant with Gemini 1.5 Pro, utilizing NLP and speech recognition to answer queries.",
     image: "/images/lumen.jpg",
-    tag: ["All"],
+    tag: ["All", "AI/ML", "Web"],
     gitUrl: "https://github.com/gauravpurohit28/Lumen-latest",
     previewUrl: "https://lumen-frontend.vercel.app",
+    techStack: ["Next.js", "React", "Gemini API", "TailwindCSS", "Node.js", "Express"]
   },
   {
     id: 3,
     title: "Pulmones",
     description: "An AI driven lung disease prediction website which we made during our hackathon.",
     image: "/images/image.png",
-    tag: ["All"],
+    tag: ["All", "AI/ML", "Web"],
     gitUrl: "https://github.com/gauravpurohit28/Pulmones",
     previewUrl: "https://pulmones-client.vercel.app",
+    techStack: ["React", "TensorFlow.js", "Node.js", "Express", "MongoDB", "TailwindCSS"]
   },
 //   {
 //     id: 4,
@@ -80,37 +83,83 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects
-      </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-      </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+    <section id="projects" className="py-20 bg-[#0A0A0A]">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="container mx-auto px-4"
+      >
+        <div className="flex flex-col items-center gap-4 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
           >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Here are some of my recent projects that showcase my skills and experience in AI/ML and web development.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4 mt-8"
+          >
+            <ProjectTag
+              onClick={handleTagChange}
+              name="All"
+              isSelected={tag === "All"}
             />
-          </motion.li>
-        ))}
-      </ul>
+            <ProjectTag
+              onClick={handleTagChange}
+              name="Web"
+              isSelected={tag === "Web"}
+            />
+            <ProjectTag
+              onClick={handleTagChange}
+              name="AI/ML"
+              isSelected={tag === "AI/ML"}
+            />
+          </motion.div>
+        </div>
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+        >
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={cardVariants}
+              className="w-full"
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+                techStack={project.techStack}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

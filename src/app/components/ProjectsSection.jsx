@@ -102,7 +102,7 @@ const ProjectsSection = () => {
     const dragEndX = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || 0;
     const delta = dragEndX - dragStartX;
     
-    if (Math.abs(delta) > 100) {
+    if (Math.abs(delta) > 50) { // Reduced threshold for better mobile response
       // Determine scroll direction based on the delta
       if (delta > 0) {
         // Scroll right (previous projects)
@@ -119,15 +119,43 @@ const ProjectsSection = () => {
   const handleDragMove = (e) => {
     if (!isDragging || !containerRef.current) return;
     
-    e.preventDefault();
+    // Only prevent default for mouse events to avoid interfering with native touch scrolling
+    if (e.type === 'mousemove') {
+      e.preventDefault();
+    }
+    
     const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
     const delta = x - dragStartX;
     
+    // Apply a smaller multiplier for mobile to make swipes feel more responsive
+    const multiplier = e.touches ? 0.8 : 0.5;
+    
     // Scroll container as user drags
-    containerRef.current.scrollLeft -= delta * 0.5;
+    containerRef.current.scrollLeft -= delta * multiplier;
     setDragStartX(x);
   };
 
+  // Ensure proper touch event handling for mobile devices
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    
+    const handleTouchStart = (e) => handleDragStart(e);
+    const handleTouchMove = (e) => handleDragMove(e);
+    const handleTouchEnd = (e) => handleDragEnd(e);
+    
+    // Add passive: false to ensure touch events can be canceled when needed
+    container.addEventListener('touchstart', handleTouchStart, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd);
+    
+    return () => {
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [isDragging]); // Re-add listeners if dragging state changes
+  
   return (
     <section id="projects" className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,7 +206,7 @@ const ProjectsSection = () => {
           {/* Project Grid/Carousel */}
           <div 
             ref={containerRef}
-            className="overflow-x-auto scrollbar-hide"
+            className="overflow-x-auto scrollbar-hide touch-pan-x"
             style={{ 
               scrollSnapType: 'x mandatory',
               scrollBehavior: 'smooth',
@@ -188,9 +216,6 @@ const ProjectsSection = () => {
             onMouseMove={handleDragMove}
             onMouseUp={handleDragEnd}
             onMouseLeave={() => setIsDragging(false)}
-            onTouchStart={handleDragStart}
-            onTouchMove={handleDragMove}
-            onTouchEnd={handleDragEnd}
           >
             <div className={`grid grid-flow-col auto-cols-[100%] md:auto-cols-[33.3%] lg:auto-cols-[33.3%] gap-6 px-1 py-2`}>
               {filteredProjects.map((project, index) => (

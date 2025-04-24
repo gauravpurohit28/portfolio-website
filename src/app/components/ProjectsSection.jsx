@@ -44,7 +44,7 @@ const projectsData = [
     tag: ["All", "Web", "ML"],
     gitUrl: "https://github.com/gauravpurohit28/Moonbot",
     previewUrl: "/",
-    techStack: ["Python", "TensorFlow", "Binance API", "Flask", "WebSockets", "PostgreSQL"]
+    techStack: ["Python", "TensorFlow", "Flask", "WebSockets", "PostgreSQL"]
   }
 ];
 

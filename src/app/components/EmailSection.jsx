@@ -28,9 +28,9 @@ const EmailSection = () => {
         <h2 className="text-2xl font-semibold text-white mb-6">Contact</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl text-white mb-4">Let's Connect</h3>
+            <h3 className="text-xl text-white mb-4">Let&apos;s Connect</h3>
             <p className="text-gray-400 mb-6">
-              I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out and I'll get back to you as soon as possible.
+              I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out and I&apos;ll get back to you as soon as possible.
             </p>
             <div className="flex flex-col space-y-4">
               <div className="flex items-center space-x-2 text-gray-400">

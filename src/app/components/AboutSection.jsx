@@ -25,13 +25,13 @@ const AboutSection = () => {
           <div className="lg:w-1/2">
             <h2 className="text-2xl font-semibold text-white mb-6">About Me</h2>
             <p className="text-gray-400 mb-4">
-              I'm a final-year Computer Science student passionate about building innovative software solutions. With a strong foundation in both frontend and backend technologies, I specialize in developing responsive web applications with modern frameworks like React and Next.js.
+              I&apos;m a final-year Computer Science student passionate about building innovative software solutions. With a strong foundation in both frontend and backend technologies, I specialize in developing responsive web applications with modern frameworks like React and Next.js.
             </p>
             <p className="text-gray-400 mb-4">
-              My experience extends to machine learning and AI, where I've developed models for various classification and prediction tasks. I'm constantly exploring new technologies to stay at the forefront of the rapidly evolving tech landscape.
+              My experience extends to machine learning and AI, where I&apos;ve developed models for various classification and prediction tasks. I&apos;m constantly exploring new technologies to stay at the forefront of the rapidly evolving tech landscape.
             </p>
             <p className="text-gray-400">
-              I'm currently seeking full-time opportunities in software development where I can apply my technical skills and contribute to meaningful projects.
+              I&apos;m currently seeking full-time opportunities in software development where I can apply my technical skills and contribute to meaningful projects.
             </p>
           </div>
           

@@ -36,4 +36,19 @@ html {
   background: rgb(80, 80, 80);
 }
 
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+/* For IE/Edge */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+}
+
 

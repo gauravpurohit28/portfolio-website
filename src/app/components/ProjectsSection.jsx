@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useAnimation, useMotionValue, useTransform } from "framer-motion";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const projectsData = [
   {
@@ -35,31 +36,103 @@ const projectsData = [
     previewUrl: "https://pulmones-client.vercel.app",
     techStack: ["React", "TensorFlow.js", "Node.js", "Express", "MongoDB", "TailwindCSS"]
   },
+  {
+    id: 4,
+    title: "MoonBot",
+    description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
+    image: "/images/moonbot.jpg",
+    tag: ["All", "Web", "ML"],
+    gitUrl: "https://github.com/gauravpurohit28/Moonbot",
+    previewUrl: "/",
+    techStack: ["Python", "TensorFlow", "Binance API", "Flask", "WebSockets", "PostgreSQL"]
+  }
 ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Filter projects based on selected tag
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
-
+  
+  // Set mobile state based on window width
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Handle tag change
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+  
+  // Animation variants
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
+  
+  // Drag properties for swipe interactions
+  const [dragStartX, setDragStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef(null);
+  
+  const handleDragStart = (e) => {
+    setIsDragging(true);
+    setDragStartX(e.clientX || (e.touches && e.touches[0].clientX) || 0);
+  };
+  
+  const handleDragEnd = (e) => {
+    if (!isDragging || !containerRef.current) return;
+    
+    const dragEndX = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || 0;
+    const delta = dragEndX - dragStartX;
+    
+    if (Math.abs(delta) > 100) {
+      // Determine scroll direction based on the delta
+      if (delta > 0) {
+        // Scroll right (previous projects)
+        containerRef.current.scrollBy({ left: -containerRef.current.offsetWidth, behavior: 'smooth' });
+      } else {
+        // Scroll left (next projects)
+        containerRef.current.scrollBy({ left: containerRef.current.offsetWidth, behavior: 'smooth' });
+      }
+    }
+    
+    setIsDragging(false);
+  };
+  
+  const handleDragMove = (e) => {
+    if (!isDragging || !containerRef.current) return;
+    
+    e.preventDefault();
+    const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const delta = x - dragStartX;
+    
+    // Scroll container as user drags
+    containerRef.current.scrollLeft -= delta * 0.5;
+    setDragStartX(x);
+  };
 
   return (
     <section id="projects" className="py-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <h2 className="text-2xl font-semibold text-white mb-6">Projects</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex flex-col md:flex-row md:items-center md:justify-between">
+          <h2 className="text-2xl font-semibold text-white mb-6 md:mb-0">Projects</h2>
           <div className="flex flex-wrap gap-2">
             <ProjectTag
               onClick={handleTagChange}
@@ -78,27 +151,93 @@ const ProjectsSection = () => {
             />
           </div>
         </div>
-
-        <ul ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <motion.li
-              key={index}
-              variants={cardVariants}
-              initial="initial"
-              animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 0.3, delay: index * 0.2 }}
+        
+        <div 
+          ref={ref}
+          className="relative"
+        >
+          {/* Navigation buttons */}
+          <div className="hidden md:block absolute -left-6 top-1/2 -translate-y-1/2 z-10">
+            <button 
+              onClick={() => containerRef.current?.scrollBy({ left: -containerRef.current.offsetWidth, behavior: 'smooth' })}
+              className="p-3 rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all"
             >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imgUrl={project.image}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
-                techStack={project.techStack}
+              <ChevronLeftIcon className="h-6 w-6 text-white" />
+            </button>
+          </div>
+          
+          <div className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 z-10">
+            <button 
+              onClick={() => containerRef.current?.scrollBy({ left: containerRef.current.offsetWidth, behavior: 'smooth' })}
+              className="p-3 rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all"
+            >
+              <ChevronRightIcon className="h-6 w-6 text-white" />
+            </button>
+          </div>
+          
+          {/* Project Grid/Carousel */}
+          <div 
+            ref={containerRef}
+            className="overflow-x-auto scrollbar-hide"
+            style={{ 
+              scrollSnapType: 'x mandatory',
+              scrollBehavior: 'smooth',
+              WebkitOverflowScrolling: 'touch',
+            }}
+            onMouseDown={handleDragStart}
+            onMouseMove={handleDragMove}
+            onMouseUp={handleDragEnd}
+            onMouseLeave={() => setIsDragging(false)}
+            onTouchStart={handleDragStart}
+            onTouchMove={handleDragMove}
+            onTouchEnd={handleDragEnd}
+          >
+            <div className={`grid grid-flow-col auto-cols-[100%] md:auto-cols-[33.3%] lg:auto-cols-[33.3%] gap-6 px-1 py-2`}>
+              {filteredProjects.map((project, index) => (
+                <div
+                  key={index}
+                  className="snap-center px-2"
+                  style={{ scrollSnapAlign: 'center' }}
+                >
+                  <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    animate={isInView ? "animate" : "initial"}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="h-full"
+                    whileHover={{ y: -5 }}
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imgUrl={project.image}
+                      gitUrl={project.gitUrl}
+                      previewUrl={project.previewUrl}
+                      techStack={project.techStack}
+                    />
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Scroll indicators */}
+          <div className="flex justify-center mt-8 gap-2">
+            {[...Array(Math.ceil(filteredProjects.length / (isMobile ? 1 : 3)))].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  if (containerRef.current) {
+                    const scrollAmount = i * containerRef.current.offsetWidth;
+                    containerRef.current.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+                  }
+                }}
+                className="w-2.5 h-2.5 rounded-full bg-white/30 hover:bg-white/60 transition-colors"
+                aria-label={`View page ${i + 1}`}
               />
-            </motion.li>
-          ))}
-        </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

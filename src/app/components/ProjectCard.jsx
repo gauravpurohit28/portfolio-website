@@ -1,12 +1,36 @@
 "use client";
 import React, { useState } from "react";
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { CodeBracketIcon, EyeIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, techStack = [] }) => {
   const [imageError, setImageError] = useState(false);
+
+  // Create a themed fallback for the MoonBot project
+  const renderFallbackContent = () => {
+    if (title === "MoonBot") {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-900/40 to-purple-900/40">
+          <div className="text-center p-6">
+            <CurrencyDollarIcon className="h-12 w-12 text-blue-400 mx-auto mb-3" />
+            <p className="text-blue-300 font-medium">MoonBot</p>
+            <p className="text-gray-400 text-xs mt-2">Crypto Trading Bot</p>
+          </div>
+        </div>
+      );
+    }
+    
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="text-center p-4">
+          <CodeBracketIcon className="h-10 w-10 text-gray-500 mx-auto mb-2" />
+          <p className="text-gray-400 text-sm">{title}</p>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <motion.div
@@ -51,12 +75,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, techStack
             </div>
           </>
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="text-center p-4">
-              <CodeBracketIcon className="h-10 w-10 text-gray-500 mx-auto mb-2" />
-              <p className="text-gray-400 text-sm">{title}</p>
-            </div>
-          </div>
+          renderFallbackContent()
         )}
       </div>
       <div className="p-6 flex flex-col flex-grow">

@@ -3,18 +3,18 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { skill: "JavaScript", level: 90 },
-  { skill: "React.js", level: 85 },
-  { skill: "Node.js", level: 80 },
-  { skill: "Next.js", level: 85 },
-  { skill: "TypeScript", level: 75 },
-  { skill: "Python", level: 80 },
-  { skill: "TensorFlow", level: 70 },
-  { skill: "MongoDB", level: 75 },
-  { skill: "SQL", level: 80 },
-  { skill: "Git", level: 85 },
-  { skill: "Docker", level: 70 },
-  { skill: "AWS", level: 65 },
+  { skill: "JavaScript" },
+  { skill: "React.js" },
+  { skill: "Node.js" },
+  { skill: "Next.js" },
+  { skill: "TypeScript" },
+  { skill: "Python" },
+  { skill: "TensorFlow" },
+  { skill: "MongoDB" },
+  { skill: "SQL" },
+  { skill: "Git" },
+  { skill: "Docker" },
+  { skill: "AWS" },
 ];
 
 const AboutSection = () => {
@@ -25,7 +25,7 @@ const AboutSection = () => {
           <div className="lg:w-1/2">
             <h2 className="text-2xl font-semibold text-white mb-6">About Me</h2>
             <p className="text-gray-400 mb-4">
-              I&apos;m a final-year Computer Science student passionate about building innovative software solutions. With a strong foundation in both frontend and backend technologies, I specialize in developing responsive web applications with modern frameworks like React and Next.js.
+              I&apos;m a final-year Information Technology student passionate about building innovative software solutions. With a strong foundation in both frontend and backend technologies, I specialize in developing responsive web applications with modern frameworks like React and Next.js.
             </p>
             <p className="text-gray-400 mb-4">
               My experience extends to machine learning and AI, where I&apos;ve developed models for various classification and prediction tasks. I also have hands-on experience with DevOps practices, including creating CI/CD pipelines, containerization using Docker, and deploying scalable applications on cloud platforms like AWS.
@@ -48,15 +48,6 @@ const AboutSection = () => {
                 >
                   <div className="mb-2">
                     <p className="text-white text-sm">{item.skill}</p>
-                    <div className="w-full bg-[#1E1E1E] h-2 rounded-full">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.level}%` }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="h-full bg-white rounded-full"
-                      ></motion.div>
-                    </div>
                   </div>
                 </motion.div>
               ))}

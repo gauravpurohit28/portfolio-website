@@ -30,9 +30,6 @@ const AboutSection = () => {
             <p className="text-gray-400 mb-4">
               My experience extends to machine learning and AI, where I&apos;ve developed models for various classification and prediction tasks. I also have hands-on experience with DevOps practices, including creating CI/CD pipelines, containerization using Docker, and deploying scalable applications on cloud platforms like AWS.
             </p>
-            <p className="text-gray-400">
-              I&apos;m currently seeking full-time opportunities in software development where I can apply my technical skills and contribute to meaningful projects. I&apos;m particularly excited about roles that allow me to work on AI-driven solutions and optimize development workflows through DevOps practices.
-            </p>
           </div>
           
           <div className="lg:w-1/2">

@@ -40,7 +40,7 @@ const projectsData = [
     id: 4,
     title: "MoonBot",
     description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
-    image: "/images/moonbot.jpg",
+    image: "/images/moonbot.png",
     tag: ["All", "Web", "ML"],
     gitUrl: "https://github.com/gauravpurohit28/Moonbot",
     previewUrl: "/",

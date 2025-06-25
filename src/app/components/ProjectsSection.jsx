@@ -8,13 +8,13 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 const projectsData = [
   {
     id: 1,
-    title: "Breast Cancer Diagnosis",
-    description: "A machine learning model for early detection of breast cancer using histopathological image analysis.",
-    image: "/images/breast.png",
-    tag: ["All", "ML"],
-    gitUrl: "https://colab.research.google.com/drive/1EsRZVwOCfcevIeMiNvXRVkDrjYPjWyKq#scrollTo=Y2YDRxObfUFO",
-    previewUrl: "https://gauravbreastcp.glitch.me",
-    techStack: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"]
+    title: "MoonBot",
+    description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
+    image: "/images/moonbot.png",
+    tag: ["All", "Web", "ML"],
+    gitUrl: "https://github.com/gauravpurohit28/Moonbot",
+    previewUrl: "/",
+    techStack: ["ReactJS", "Python", "TensorFlow", "WebSockets", "FastAPI", "Firebase"]
   },
   {
     id: 2,
@@ -28,6 +28,17 @@ const projectsData = [
   },
   {
     id: 3,
+    title: "Breast Cancer Diagnosis",
+    description: "A machine learning model for early detection of breast cancer using histopathological image analysis.",
+    image: "/images/breast.png",
+    tag: ["All", "ML"],
+    gitUrl: "https://colab.research.google.com/drive/1EsRZVwOCfcevIeMiNvXRVkDrjYPjWyKq#scrollTo=Y2YDRxObfUFO",
+    previewUrl: "https://gauravbreastcp.glitch.me",
+    techStack: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"]
+  },
+ 
+  {
+    id: 4,
     title: "Pulmones",
     description: "A respiratory health monitoring application that analyzes breathing patterns and provides diagnostic insights.",
     image: "/images/image.png",
@@ -35,16 +46,6 @@ const projectsData = [
     gitUrl: "https://github.com/gauravpurohit28/Pulmones",
     previewUrl: "https://pulmones-client.vercel.app",
     techStack: ["React", "TensorFlow.js", "Node.js", "TailwindCSS"]
-  },
-  {
-    id: 4,
-    title: "MoonBot",
-    description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
-    image: "/images/moonbot.png",
-    tag: ["All", "Web", "ML"],
-    gitUrl: "https://github.com/gauravpurohit28/Moonbot",
-    previewUrl: "/",
-    techStack: ["ReactJS", "Python", "TensorFlow", "WebSockets", "FastAPI", "Firebase"]
   },
   {
     id: 5,

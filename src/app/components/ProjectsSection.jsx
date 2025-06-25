@@ -24,7 +24,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gauravpurohit28/Lumen-latest",
     previewUrl: "https://lumen-frontend.vercel.app",
-    techStack: ["Next.js", "React", "Gemini API", "TailwindCSS", "Node.js", "Express"]
+    techStack: ["Next.js", "React", "Gemini API", "TailwindCSS", "Python"]
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gauravpurohit28/Pulmones",
     previewUrl: "https://pulmones-client.vercel.app",
-    techStack: ["React", "TensorFlow.js", "Node.js", "Express", "MongoDB", "TailwindCSS"]
+    techStack: ["React", "TensorFlow.js", "Node.js", "TailwindCSS"]
   },
   {
     id: 4,
@@ -44,7 +44,17 @@ const projectsData = [
     tag: ["All", "Web", "ML"],
     gitUrl: "https://github.com/gauravpurohit28/Moonbot",
     previewUrl: "/",
-    techStack: ["Python", "TensorFlow", "Flask", "WebSockets", "PostgreSQL"]
+    techStack: ["ReactJS", "Python", "TensorFlow", "WebSockets", "FastAPI", "Firebase"]
+  },
+  {
+    id: 5,
+    title: "Employee Management System",
+    description: "A pure React application for assigning tasks and managing employee task progress, featuring an intuitive UI for streamlined task management.",
+    image: "/images/task.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/gauravpurohit28/React-Projects/tree/main/ems",
+    previewUrl: "/",
+    techStack: ["React", "TailwindCSS"]
   }
 ];
 
@@ -54,39 +64,33 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true });
   const [isMobile, setIsMobile] = useState(false);
   
-  // Filter projects based on selected tag
+
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
   
-  // Set mobile state based on window width
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-    };
-    
-    // Set initial value
+    }; 
     handleResize();
-    
-    // Add event listener
     window.addEventListener('resize', handleResize);
-    
-    // Clean up
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   
-  // Handle tag change
+
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
   
-  // Animation variants
+
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
   
-  // Drag properties for swipe interactions
+
   const [dragStartX, setDragStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
@@ -102,13 +106,13 @@ const ProjectsSection = () => {
     const dragEndX = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || 0;
     const delta = dragEndX - dragStartX;
     
-    if (Math.abs(delta) > 50) { // Reduced threshold for better mobile response
-      // Determine scroll direction based on the delta
+    if (Math.abs(delta) > 50) { 
+    
       if (delta > 0) {
-        // Scroll right (previous projects)
+       
         containerRef.current.scrollBy({ left: -containerRef.current.offsetWidth, behavior: 'smooth' });
       } else {
-        // Scroll left (next projects)
+      
         containerRef.current.scrollBy({ left: containerRef.current.offsetWidth, behavior: 'smooth' });
       }
     }
@@ -119,7 +123,7 @@ const ProjectsSection = () => {
   const handleDragMove = (e) => {
     if (!isDragging || !containerRef.current) return;
     
-    // Only prevent default for mouse events to avoid interfering with native touch scrolling
+    
     if (e.type === 'mousemove') {
       e.preventDefault();
     }

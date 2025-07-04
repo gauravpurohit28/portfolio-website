@@ -8,6 +8,28 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 const projectsData = [
   {
     id: 1,
+    title: "Virtual Assistant",
+    description: "A customizable AI-powered virtual assistant that can perform basic tasks, answer questions, and interact with users via voice commands. Users can personalize their assistant's name and image, and the assistant can perform web searches, play YouTube videos, tell the date/time, and more. Features include voice-activated AI assistant, customizable settings, authentication, task automation (Google/YouTube search, play videos, open calculator, show weather, etc.), and a personalized experience for each user.",
+    image: "/images/virtual-assistant.png", // Placeholder image
+    tag: ["All", "Web", "AI"],
+    gitUrl: "https://github.com/gauravpurohit28/VirtualAssistant", // Placeholder URL
+    previewUrl: "/", // Placeholder preview
+    techStack: [
+      "React (Vite)",
+      "React Router",
+      "Tailwind CSS",
+      "Axios",
+      "Node.js",
+      "Express",
+      "MongoDB (Mongoose)",
+      "JWT Auth",
+      "Cloudinary",
+      "Gemini API",
+      "Multer"
+    ]
+  },
+  {
+    id: 2,
     title: "MoonBot",
     description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
     image: "/images/moonbot.png",
@@ -17,7 +39,7 @@ const projectsData = [
     techStack: ["ReactJS", "Python", "TensorFlow", "WebSockets", "FastAPI", "Firebase"]
   },
   {
-    id: 2,
+    id: 3,
     title: "Lumen",
     description: "A next-generation AI chatbot utilizing the Gemini API for enhanced natural language processing and content generation.",
     image: "/images/lumen.jpg",
@@ -27,7 +49,7 @@ const projectsData = [
     techStack: ["Next.js", "React", "Gemini API", "TailwindCSS", "Python"]
   },
   {
-    id: 3,
+    id: 4,
     title: "Breast Cancer Diagnosis",
     description: "A machine learning model for early detection of breast cancer using histopathological image analysis.",
     image: "/images/breast.png",
@@ -38,7 +60,7 @@ const projectsData = [
   },
  
   {
-    id: 4,
+    id: 5,
     title: "Pulmones",
     description: "A respiratory health monitoring application that analyzes breathing patterns and provides diagnostic insights.",
     image: "/images/image.png",
@@ -48,7 +70,7 @@ const projectsData = [
     techStack: ["React", "TensorFlow.js", "Node.js", "TailwindCSS"]
   },
   {
-    id: 5,
+    id: 6,
     title: "Employee Management System",
     description: "A pure React application for assigning tasks and managing employee task progress, featuring an intuitive UI for streamlined task management.",
     image: "/images/task.png",
@@ -225,7 +247,7 @@ const ProjectsSection = () => {
             <div className={`grid grid-flow-col auto-cols-[100%] md:auto-cols-[33.3%] lg:auto-cols-[33.3%] gap-6 px-1 py-2`}>
               {filteredProjects.map((project, index) => (
                 <div
-                  key={index}
+                  key={project.id}
                   className="snap-center px-2"
                   style={{ scrollSnapAlign: 'center' }}
                 >

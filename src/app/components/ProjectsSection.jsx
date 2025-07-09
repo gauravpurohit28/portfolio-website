@@ -9,23 +9,18 @@ const projectsData = [
   {
     id: 1,
     title: "Virtual Assistant",
-    description: "A customizable AI-powered virtual assistant that can perform basic tasks, answer questions, and interact with users via voice commands. Users can personalize their assistant's name and image, and the assistant can perform web searches, play YouTube videos, tell the date/time, and more. Features include voice-activated AI assistant, customizable settings, authentication, task automation (Google/YouTube search, play videos, open calculator, show weather, etc.), and a personalized experience for each user.",
+    description: "A customizable AI-powered assistant that performs tasks, answers questions, and interacts via voice commands. Features include web search, YouTube playback, weather, and more.",
     image: "/images/virtual-assistant.png", // Placeholder image
     tag: ["All", "Web", "AI"],
     gitUrl: "https://github.com/gauravpurohit28/VirtualAssistant", // Placeholder URL
     previewUrl: "/", // Placeholder preview
     techStack: [
-      "React (Vite)",
-      "React Router",
-      "Tailwind CSS",
-      "Axios",
+      "React",
       "Node.js",
       "Express",
-      "MongoDB (Mongoose)",
+      "MongoDB",
       "JWT Auth",
-      "Cloudinary",
-      "Gemini API",
-      "Multer"
+      "Gemini API"
     ]
   },
   {

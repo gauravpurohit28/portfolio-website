@@ -76,7 +76,7 @@ const HeroSection = () => {
                     src="/images/gaurav.jpg"
                     alt="Gaurav Purohit"
                     fill
-                    className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="object-cover transition-all duration-500"
                     sizes="(max-width: 768px) 220px, (max-width: 1024px) 240px, 280px"
                     priority
                   />

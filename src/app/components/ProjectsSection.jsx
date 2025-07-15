@@ -73,6 +73,16 @@ const projectsData = [
     gitUrl: "https://github.com/gauravpurohit28/React-Projects/tree/main/ems",
     previewUrl: "/",
     techStack: ["React", "TailwindCSS"]
+  },
+  {
+    id: 7,
+    title: "SaaS Landing Page",
+    description: "A clean, responsive SaaS landing page built with Next.js and Tailwind CSS. Features include a hero section, pricing cards, testimonials, and smooth mobile responsiveness, perfect for showcasing a product or service.",
+    image: "/images/Saas.png", // Placeholder image, update if you have a specific one
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/gauravpurohit28/SaaS-landing-page",
+    previewUrl: "https://saas-page-chi.vercel.app/",
+    techStack: ["Next.js", "React", "Typescript","TailwindCSS"]
   }
 ];
 

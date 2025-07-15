@@ -8,6 +8,16 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 const projectsData = [
   {
     id: 1,
+    title: "SaaS Landing Page",
+    description: "A clean, responsive SaaS landing page built with Next.js and Tailwind CSS. Features include a hero section, pricing cards, testimonials, and smooth mobile responsiveness, perfect for showcasing a product or service.",
+    image: "/images/Saas.png", // Placeholder image, update if you have a specific one
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/gauravpurohit28/SaaS-landing-page",
+    previewUrl: "https://saas-page-chi.vercel.app/",
+    techStack: ["Next.js", "React", "Typescript","TailwindCSS"]
+  },
+  {
+    id: 2,
     title: "Virtual Assistant",
     description: "A customizable AI-powered assistant that performs tasks, answers questions, and interacts via voice commands. Features include web search, YouTube playback, weather, and more.",
     image: "/images/virtual-assistant.png", // Placeholder image
@@ -24,7 +34,7 @@ const projectsData = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "MoonBot",
     description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
     image: "/images/moonbot.png",
@@ -34,7 +44,7 @@ const projectsData = [
     techStack: ["ReactJS", "Python", "TensorFlow", "WebSockets", "FastAPI", "Firebase"]
   },
   {
-    id: 3,
+    id: 4,
     title: "Lumen",
     description: "A next-generation AI chatbot utilizing the Gemini API for enhanced natural language processing and content generation.",
     image: "/images/lumen.jpg",
@@ -44,7 +54,7 @@ const projectsData = [
     techStack: ["Next.js", "React", "Gemini API", "TailwindCSS", "Python"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Breast Cancer Diagnosis",
     description: "A machine learning model for early detection of breast cancer using histopathological image analysis.",
     image: "/images/breast.png",
@@ -55,7 +65,7 @@ const projectsData = [
   },
  
   {
-    id: 5,
+    id: 6,
     title: "Pulmones",
     description: "A respiratory health monitoring application that analyzes breathing patterns and provides diagnostic insights.",
     image: "/images/image.png",
@@ -65,7 +75,7 @@ const projectsData = [
     techStack: ["React", "TensorFlow.js", "Node.js", "TailwindCSS"]
   },
   {
-    id: 6,
+    id: 7,
     title: "Employee Management System",
     description: "A pure React application for assigning tasks and managing employee task progress, featuring an intuitive UI for streamlined task management.",
     image: "/images/task.png",
@@ -74,16 +84,7 @@ const projectsData = [
     previewUrl: "/",
     techStack: ["React", "TailwindCSS"]
   },
-  {
-    id: 7,
-    title: "SaaS Landing Page",
-    description: "A clean, responsive SaaS landing page built with Next.js and Tailwind CSS. Features include a hero section, pricing cards, testimonials, and smooth mobile responsiveness, perfect for showcasing a product or service.",
-    image: "/images/Saas.png", // Placeholder image, update if you have a specific one
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/gauravpurohit28/SaaS-landing-page",
-    previewUrl: "https://saas-page-chi.vercel.app/",
-    techStack: ["Next.js", "React", "Typescript","TailwindCSS"]
-  }
+  
 ];
 
 const ProjectsSection = () => {

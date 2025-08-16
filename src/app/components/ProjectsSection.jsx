@@ -8,6 +8,16 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 const projectsData = [
   {
     id: 1,
+    title: "YouTube-RAG",
+    description: "Ask questions about any YouTube video using Retrieval-Augmented Generation (RAG) powered by Google Gemini and semantic search. Paste a YouTube URL or ID, load the video, and get instant, context-aware answers — with clickable timestamps to jump straight to the relevant part of the video! Features include transcript extraction, semantic chunking, vector search with FAISS, clickable timestamps, Gemini-powered RAG, and a modern React frontend.",
+    image: "/images/rag.png", // Placeholder image, update if you have a specific one
+    tag: ["All", "Web", "AI"],
+    gitUrl: "https://github.com/gauravpurohit28/Youtube-RAG",
+    previewUrl: "/", // Add live preview if available
+    techStack: ["Python", "Flask", "LangChain", "FAISS", "React", "Gemini API", "YouTube API"]
+  },
+  {
+    id: 2,
     title: "SaaS Landing Page",
     description: "A clean, responsive SaaS landing page built with Next.js and Tailwind CSS. Features include a hero section, pricing cards, testimonials, and smooth mobile responsiveness, perfect for showcasing a product or service.",
     image: "/images/Saas.png", // Placeholder image, update if you have a specific one
@@ -17,7 +27,7 @@ const projectsData = [
     techStack: ["Next.js", "React", "Typescript","TailwindCSS"]
   },
   {
-    id: 2,
+    id: 3,
     title: "Virtual Assistant",
     description: "A customizable AI-powered assistant that performs tasks, answers questions, and interacts via voice commands. Features include web search, YouTube playback, weather, and more.",
     image: "/images/virtual-assistant.png", // Placeholder image
@@ -34,7 +44,7 @@ const projectsData = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "MoonBot",
     description: "An automated cryptocurrency trading bot that uses technical analysis and market indicators to identify profitable trading opportunities.",
     image: "/images/moonbot.png",
@@ -44,7 +54,7 @@ const projectsData = [
     techStack: ["ReactJS", "Python", "TensorFlow", "WebSockets", "FastAPI", "Firebase"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Lumen",
     description: "A next-generation AI chatbot utilizing the Gemini API for enhanced natural language processing and content generation.",
     image: "/images/lumen.jpg",
@@ -54,7 +64,7 @@ const projectsData = [
     techStack: ["Next.js", "React", "Gemini API", "TailwindCSS", "Python"]
   },
   {
-    id: 5,
+    id: 6,
     title: "Breast Cancer Diagnosis",
     description: "A machine learning model for early detection of breast cancer using histopathological image analysis.",
     image: "/images/breast.png",
@@ -65,7 +75,7 @@ const projectsData = [
   },
  
   {
-    id: 6,
+    id: 7,
     title: "Pulmones",
     description: "A respiratory health monitoring application that analyzes breathing patterns and provides diagnostic insights.",
     image: "/images/image.png",
@@ -75,7 +85,7 @@ const projectsData = [
     techStack: ["React", "TensorFlow.js", "Node.js", "TailwindCSS"]
   },
   {
-    id: 7,
+    id: 8,
     title: "Employee Management System",
     description: "A pure React application for assigning tasks and managing employee task progress, featuring an intuitive UI for streamlined task management.",
     image: "/images/task.png",

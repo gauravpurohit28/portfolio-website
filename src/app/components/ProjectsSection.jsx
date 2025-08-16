@@ -9,7 +9,7 @@ const projectsData = [
   {
     id: 1,
     title: "YouTube-RAG",
-    description: "Ask questions about any YouTube video using Retrieval-Augmented Generation (RAG) powered by Google Gemini and semantic search. Paste a YouTube URL or ID, load the video, and get instant, context-aware answers — with clickable timestamps to jump straight to the relevant part of the video! Features include transcript extraction, semantic chunking, vector search with FAISS, clickable timestamps, Gemini-powered RAG, and a modern React frontend.",
+    description: "Ask questions about any YouTube video using Retrieval-Augmented Generation (RAG) powered by Google Gemini and semantic search. Paste a YouTube URL or ID, load the video, and get instant, context-aware answers with clickable timestamps",
     image: "/images/rag.png", // Placeholder image, update if you have a specific one
     tag: ["All", "Web", "AI"],
     gitUrl: "https://github.com/gauravpurohit28/Youtube-RAG",
